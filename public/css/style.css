@@ -3,6 +3,23 @@ html {
     /* overflow: hidden; */
 }
 
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+html {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
 body {
     background-color: rgb(195, 255, 135);
     color: white;
@@ -62,8 +79,8 @@ body {
 
 .arrival-time {
     font-family: Urbanist, serif;
-    grid-column: 1 / 9;
-    grid-row: 7 / 9;
+    grid-column: 1/9;
+    grid-row: 7/9;
     display: inline-flex;
     flex-direction: row-reverse;
 }
@@ -86,22 +103,22 @@ body {
     font-family: Urbanist, serif;
     font-size: 7vw;
     font-weight: bold;
-    grid-column: 1 / 7;
-    grid-row: 1 / 5;
+    grid-column: 1/7;
+    grid-row: 1/5;
 }
 
 .route-subtitle {
     font-family: Urbanist, serif;
     font-size: 3.5vw;
-    grid-column: 1 / 7;
-    grid-row: 5 / 7;
+    grid-column: 1/7;
+    grid-row: 5/7;
 }
 
 .transit-logo {
     width: 20vw;
     height: auto;
-    grid-column: 7 / 9;
-    grid-row: 1 / 6;
+    grid-column: 7/9;
+    grid-row: 1/6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,18 +126,39 @@ body {
 }
 
 
+/* clock + date widget */
+
+.clockdate {
+    font-family: Urbanist, serif;
+}
+
+#curr-time {
+    grid-row: 4/7;
+    grid-column: 1/9;
+    font-size: 10vw;
+    text-align: right;
+}
+
+#curr-date {
+    grid-row: 7/9;
+    grid-column: 1/9;
+    font-size: 5vw;
+    text-align: right;
+}
+
+
 /* timed date grid */
 
 .r1 {
-    grid-template-rows: 1 / 2;
+    grid-template-rows: 1/2;
 }
 
 .r2 {
-    grid-template-rows: 2 / 3;
+    grid-template-rows: 2/3;
 }
 
 .r3 {
-    grid-template-rows: 3 / 4;
+    grid-template-rows: 3/4;
 }
 
 @media screen and (min-width: 1201px) {
@@ -137,12 +175,12 @@ body {
     /* ttc widget */
     .route-title {
         font-size: 2vw;
-        grid-row: 1 / 5;
-        grid-column: 1 / 8;
+        grid-row: 1/5;
+        grid-column: 1/8;
     }
     .route-subtitle {
         font-size: 1.25vw;
-        grid-row: 4 / 6;
+        grid-row: 4/6;
     }
     .arrival-time {
         font-size: 1vw;
@@ -152,8 +190,8 @@ body {
     }
     .transit-logo {
         width: 3vw;
-        grid-row: 1 / 6;
-        grid-column: 8 / 9;
+        grid-row: 1/6;
+        grid-column: 8/9;
     }
 }
 
@@ -169,13 +207,13 @@ body {
     /* ttc widget */
     .route-title {
         font-size: 1.75vw;
-        grid-row: 1 / 5;
-        grid-column: 1 / 8;
+        grid-row: 1/5;
+        grid-column: 1/8;
     }
     .route-subtitle {
         font-size: 1vw;
-        grid-row: 5 / 7;
-        grid-column: 1 / 8;
+        grid-row: 5/7;
+        grid-column: 1/8;
     }
     .arrival-time {
         font-size: 0.9vw;
@@ -189,12 +227,12 @@ body {
     @media screen and (max-height: 840px) {
         .route-title {
             font-size: 5.5vh;
-            grid-row: 1 / 5;
-            grid-column: 1 / 8;
+            grid-row: 1/5;
+            grid-column: 1/8;
         }
         .route-subtitle {
             font-size: 3.5vh;
-            grid-row: 5 / 7;
+            grid-row: 5/7;
         }
         .arrival-time {
             font-size: 1vw;
@@ -204,8 +242,8 @@ body {
         }
         .transit-logo {
             width: 3vw;
-            grid-row: 1 / 6;
-            grid-column: 8 / 9;
+            grid-row: 1/6;
+            grid-column: 8/9;
         }
         .widget {
             padding: 10px 20px;
@@ -214,12 +252,12 @@ body {
     @media screen and (min-height: 1201px) {
         .route-title {
             font-size: 5.5vh;
-            grid-row: 1 / 5;
-            grid-column: 1 / 8;
+            grid-row: 1/5;
+            grid-column: 1/8;
         }
         .route-subtitle {
             font-size: 3.5vh;
-            grid-row: 5 / 7;
+            grid-row: 5/7;
         }
         .arrival-time {
             font-size: 1vw;
@@ -229,8 +267,8 @@ body {
         }
         .transit-logo {
             width: 3vw;
-            grid-row: 1 / 6;
-            grid-column: 8 / 9;
+            grid-row: 1/6;
+            grid-column: 8/9;
         }
         .widget {
             padding: 10px 20px;
