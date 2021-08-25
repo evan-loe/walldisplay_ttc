@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+    <title>testing</title>
+</head>
+
+
+
+<body>
+
+    <div class="flex">
+        <div class="widget empty-grid"></div>
+        <div class="widget empty-grid"></div>
+        <div class="widget empty-grid"></div>
+        <div class="widget time">
+            <div></div>
+        </div>
+        <div class="widget empty-grid"></div>
+        <div class="widget empty-grid"></div>
+        <div class="widget empty-grid">
+            <p id="temperature">Please give me a temp!</p>
+        </div>
+        <div class="widget">
+            <p id="temperatureApparent">Please give me an apparent temp!</p>
+        </div>
+
+        <div class="widget ttc-grid">
+            <div class="route-title" id="stop-name">Please give me a stop name</div>
+            <div class="route-subtitle" id="route-name">Please give me a route name</div>
+            <div class="arrival-time" id="bus-times"></div>
+            <img class="transit-logo bus" src="static/TTCbus.png" alt="">
+        </div>
+        <div class="widget ttc">
+            <div class="route-title" id="stop-name">Please give me a stop name</div>
+            <div class="route-subtitle" id="route-name">Please give me a route name</div>
+            <div class="arrival-time" id="bus-times"></div>
+            <img class="transit-logo bus" src="static/TTCbus.png" alt="">
+        </div>
+        <div class="widget ttc">
+            <div class="route-title" id="stop-name">Please give me a stop name</div>
+            <div class="route-subtitle" id="route-name">Please give me a route name</div>
+            <div class="arrival-time" id="bus-times"></div>
+            <img class="transit-logo bus" src="static/TTCbus.png" alt="">
+        </div>
+    </div>
+
+
+    <div id="background-imgs">
+        <div id="background-img-back"><img src="static/backgrounds/darkblueskydock.jpeg"></div>
+        <div id="background-img-top"><img src="static/backgrounds/cityroad.jpg"></div>
+    </div>
+
+</body>
+
+</html>
+<script src="./app.js"></script>
