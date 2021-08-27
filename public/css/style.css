@@ -1,5 +1,8 @@
 html {
     margin: 0px;
+    scroll-snap-type: both mandatory;
+    scroll-snap-stop: normal;
+    scroll-padding: 20px;
     /* overflow: hidden; */
 }
 
@@ -24,6 +27,8 @@ body {
     background-color: rgb(195, 255, 135);
     color: white;
     margin: 0;
+    display: inline-flex;
+    justify-content: center;
 }
 
 .flex {
@@ -31,20 +36,26 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-between;
+    width: 100vw;
+}
+
+.second-page {
+    position: fixed;
+    /* visibility: hidden; */
+    top: 0px;
 }
 
 .widget {
     width: 90%;
     border-radius: 20px;
     padding: 20px;
-    margin-top: 1vh;
-    margin-bottom: 2.5vh;
     margin-right: auto;
     margin-left: auto;
     background-color: rgba(199, 199, 199, 0.6);
     display: grid;
     grid-template-rows: repeat(8, 4.2vw);
     grid-template-columns: repeat(8, 12.5%);
+    scroll-snap-align: start;
 }
 
 .blank-bk {
@@ -77,29 +88,28 @@ body {
 
 /* TTC Widget */
 
-.arrival-time {
+.ttc .arrival-time {
     font-family: Urbanist, serif;
     grid-column: 1/9;
     grid-row: 7/9;
     display: inline-flex;
     flex-direction: row-reverse;
-}
-
-.arrival-time div {
-    text-align: center;
-    margin: auto;
-}
-
-.arrival-time {
+    justify-content: space-evenly;
     font-size: 3vw;
+    align-items: center;
 }
 
-.arrival-time div:first-child {
+.ttc .arrival-time div {
+    text-align: center;
+    flex-basis: content;
+}
+
+.ttc .arrival-time div:first-child {
     font-weight: bold;
     font-size: 4vw;
 }
 
-.route-title {
+.ttc .route-title {
     font-family: Urbanist, serif;
     font-size: 7vw;
     font-weight: bold;
@@ -107,21 +117,18 @@ body {
     grid-row: 1/5;
 }
 
-.route-subtitle {
+.ttc .route-subtitle {
     font-family: Urbanist, serif;
     font-size: 3.5vw;
     grid-column: 1/7;
     grid-row: 5/7;
 }
 
-.transit-logo {
-    width: 20vw;
+.ttc .transit-logo {
+    width: min(20vw, 30vh);
     height: auto;
     grid-column: 7/9;
     grid-row: 1/6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: auto;
 }
 
@@ -133,14 +140,14 @@ body {
 }
 
 #curr-time {
-    grid-row: 4/7;
+    grid-row: 3/6;
     grid-column: 1/9;
     font-size: 10vw;
     text-align: right;
 }
 
 #curr-date {
-    grid-row: 7/9;
+    grid-row: 6/9;
     grid-column: 1/9;
     font-size: 5vw;
     text-align: right;
@@ -173,25 +180,38 @@ body {
         grid-template-columns: repeat(8, 12.5%);
     }
     /* ttc widget */
-    .route-title {
-        font-size: 2vw;
+    .ttc .route-title {
+        font-size: min(2vw, 6vh);
         grid-row: 1/5;
         grid-column: 1/8;
     }
-    .route-subtitle {
-        font-size: 1.25vw;
+    .ttc .route-subtitle {
+        font-size: min(1.25vw, 4vh);
         grid-row: 4/6;
     }
-    .arrival-time {
-        font-size: 1vw;
+    .ttc .arrival-time {
+        font-size: min(2vw, 3vh);
     }
-    .arrival-time div:first-child {
-        font-size: 2vw;
+    .ttc .arrival-time div:first-child {
+        font-size: min(2vw, 6vh);
     }
-    .transit-logo {
-        width: 3vw;
+    .ttc .transit-logo {
+        width: min(3vw, 10vh);
         grid-row: 1/6;
         grid-column: 8/9;
+    }
+    #curr-time {
+        grid-row: 1/5;
+        grid-column: 1/9;
+        font-size: min(4vw, 10vh);
+        text-align: right;
+        /* line-height: 80%; */
+    }
+    #curr-date {
+        grid-row: 6/9;
+        grid-column: 1/9;
+        font-size: min(2vw, 5vh);
+        text-align: right;
     }
 }
 
@@ -205,42 +225,42 @@ body {
         grid-template-columns: repeat(8, 12.5%);
     }
     /* ttc widget */
-    .route-title {
+    .ttc .route-title {
         font-size: 1.75vw;
         grid-row: 1/5;
         grid-column: 1/8;
     }
-    .route-subtitle {
+    .ttc .route-subtitle {
         font-size: 1vw;
         grid-row: 5/7;
         grid-column: 1/8;
     }
-    .arrival-time {
+    .ttc .arrival-time {
         font-size: 0.9vw;
     }
-    .arrival-time div:first-child {
+    .ttc .arrival-time div:first-child {
         font-size: 1.5vw;
     }
-    .transit-logo {
+    .ttc .transit-logo {
         width: 3vw;
     }
     @media screen and (max-height: 840px) {
-        .route-title {
+        .ttc .route-title {
             font-size: 5.5vh;
             grid-row: 1/5;
             grid-column: 1/8;
         }
-        .route-subtitle {
+        .ttc .route-subtitle {
             font-size: 3.5vh;
             grid-row: 5/7;
         }
-        .arrival-time {
+        .ttc .arrival-time {
             font-size: 1vw;
         }
-        .arrival-time div:first-child {
+        .ttc .arrival-time div:first-child {
             font-size: 1.25vw;
         }
-        .transit-logo {
+        .ttc .transit-logo {
             width: 3vw;
             grid-row: 1/6;
             grid-column: 8/9;
@@ -250,22 +270,22 @@ body {
         }
     }
     @media screen and (min-height: 1201px) {
-        .route-title {
+        .ttc .route-title {
             font-size: 5.5vh;
             grid-row: 1/5;
             grid-column: 1/8;
         }
-        .route-subtitle {
+        .ttc .route-subtitle {
             font-size: 3.5vh;
             grid-row: 5/7;
         }
-        .arrival-time {
+        .ttc .arrival-time {
             font-size: 1vw;
         }
-        .arrival-time div:first-child {
+        .ttc .arrival-time div:first-child {
             font-size: 1.25vw;
         }
-        .transit-logo {
+        .ttc .transit-logo {
             width: 3vw;
             grid-row: 1/6;
             grid-column: 8/9;
